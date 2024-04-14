@@ -12,17 +12,16 @@ import com.myworkspace.passwordManager.exceptions.InvalidPasswordException;
 import com.myworkspace.passwordManager.exceptions.InvalidUsernameException;
 import com.myworkspace.passwordManager.exceptions.UserAlreadyExistException;
 import com.myworkspace.passwordManager.exceptions.UserNotFoundException;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 
 @Service
+@AllArgsConstructor
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private final UserRepository userRepository;
 
     @Override
     public RegistrationResponse register(RegistrationRequest registrationRequest) {

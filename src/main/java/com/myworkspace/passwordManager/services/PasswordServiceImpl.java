@@ -40,7 +40,7 @@ public class PasswordServiceImpl implements PasswordService {
 
     @Override
     public UpdatePasswordResponse updatePassword(UpdatePasswordRequest updatePasswordRequest) {
-        Password foundPassword = findByUsername(updatePasswordRequest.getUsername());
+        Password foundPassword = findByWebsite(updatePasswordRequest.getWebsite());
         if(foundPassword == null) throw new PasswordNotFoundException("Not found");
         foundPassword.setWebsite(updatePasswordRequest.getWebsite());
         foundPassword.setUsername(updatePasswordRequest.getUsername());

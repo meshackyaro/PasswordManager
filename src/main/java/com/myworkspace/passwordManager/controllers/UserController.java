@@ -52,7 +52,7 @@ public class UserController {
         }
     }
 
-    @PatchMapping("/updatePassword")
+    @PostMapping("/updatePassword")
     public ResponseEntity<?> updatePassword(@RequestBody UpdatePasswordRequest updatePasswordRequest) {
         try {
             UpdatePasswordResponse response = passwordService.updatePassword(updatePasswordRequest);
@@ -63,7 +63,7 @@ public class UserController {
         }
     }
 
-    @DeleteMapping("/deletePassword")
+    @PostMapping("/deletePassword")
     public ResponseEntity<?> deletePassword(@RequestBody DeleteRequest deleteRequest) {
         try {
             DeleteResponse response = passwordService.deletePassword(deleteRequest);

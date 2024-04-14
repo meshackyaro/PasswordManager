@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PasswordRepository extends MongoRepository<Password, String> {
     Password findByWebsite(String website);
-
     Password findByUsername(String username);
 }
